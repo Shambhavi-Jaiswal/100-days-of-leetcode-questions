@@ -1,0 +1,8 @@
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        a={}
+        a[-2]=a[-1]=0
+        a[0]=nums[0]
+        for i in range(len(nums)):
+            a[i]=max(a[i-2]+nums[i],a[i-1])
+        return a[len(nums)-1]    
